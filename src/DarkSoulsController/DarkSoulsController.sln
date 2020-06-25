@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29409.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkSoulsController.Api", "DarkSoulsController.Api\DarkSoulsController.Api.csproj", "{B4A43C31-8918-4807-BB53-36B7527C3A8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkSoulsController.Api", "DarkSoulsController.Api\DarkSoulsController.Api.csproj", "{B4A43C31-8918-4807-BB53-36B7527C3A8D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkSoulsController.Client", "DarkSoulsController.Client\DarkSoulsController.Client.csproj", "{CBC40589-8930-452E-B265-5F6D1A8ACD7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkSoulsController.TwitchClient", "DarkSoulsController.TwitchClient\DarkSoulsController.TwitchClient.csproj", "{187F3139-542F-4CBB-A869-15F5A99DA8DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +69,26 @@ Global
 		{CBC40589-8930-452E-B265-5F6D1A8ACD7A}.Release|x86.ActiveCfg = Release|x86
 		{CBC40589-8930-452E-B265-5F6D1A8ACD7A}.Release|x86.Build.0 = Release|x86
 		{CBC40589-8930-452E-B265-5F6D1A8ACD7A}.Release|x86.Deploy.0 = Release|x86
+		{187F3139-542F-4CBB-A869-15F5A99DA8DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{187F3139-542F-4CBB-A869-15F5A99DA8DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{187F3139-542F-4CBB-A869-15F5A99DA8DA}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{187F3139-542F-4CBB-A869-15F5A99DA8DA}.Debug|ARM.Build.0 = Debug|Any CPU
+		{187F3139-542F-4CBB-A869-15F5A99DA8DA}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{187F3139-542F-4CBB-A869-15F5A99DA8DA}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{187F3139-542F-4CBB-A869-15F5A99DA8DA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{187F3139-542F-4CBB-A869-15F5A99DA8DA}.Debug|x64.Build.0 = Debug|Any CPU
+		{187F3139-542F-4CBB-A869-15F5A99DA8DA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{187F3139-542F-4CBB-A869-15F5A99DA8DA}.Debug|x86.Build.0 = Debug|Any CPU
+		{187F3139-542F-4CBB-A869-15F5A99DA8DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{187F3139-542F-4CBB-A869-15F5A99DA8DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{187F3139-542F-4CBB-A869-15F5A99DA8DA}.Release|ARM.ActiveCfg = Release|Any CPU
+		{187F3139-542F-4CBB-A869-15F5A99DA8DA}.Release|ARM.Build.0 = Release|Any CPU
+		{187F3139-542F-4CBB-A869-15F5A99DA8DA}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{187F3139-542F-4CBB-A869-15F5A99DA8DA}.Release|ARM64.Build.0 = Release|Any CPU
+		{187F3139-542F-4CBB-A869-15F5A99DA8DA}.Release|x64.ActiveCfg = Release|Any CPU
+		{187F3139-542F-4CBB-A869-15F5A99DA8DA}.Release|x64.Build.0 = Release|Any CPU
+		{187F3139-542F-4CBB-A869-15F5A99DA8DA}.Release|x86.ActiveCfg = Release|Any CPU
+		{187F3139-542F-4CBB-A869-15F5A99DA8DA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

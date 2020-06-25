@@ -24,7 +24,7 @@ using Windows.Foundation;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 
-using WarzoneVoiceController.Client;
+using DarkSoulsVoiceController.Client;
 
 namespace SerialArduino
 {

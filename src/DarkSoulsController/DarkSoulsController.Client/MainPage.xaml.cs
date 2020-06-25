@@ -55,7 +55,7 @@ namespace DarkSoulsVoiceController.Client
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             connection = new HubConnectionBuilder()
-                .WithUrl("https://DarkSoulsvoicecontroller.azurewebsites.net/DarkSouls")
+                .WithUrl("https://darksouls.azurewebsites.net/darksouls")
                 .Build();
 
             connection.Closed += (error) =>
@@ -69,10 +69,10 @@ namespace DarkSoulsVoiceController.Client
                 return Task.CompletedTask;
             };
 
-            connection.On<IntentRequest>("ReloadIntent", async (intentReqest) =>
+            connection.On<IntentRequest>("RightLightIntent", async (intentReqest) =>
             {
-                await HitKey("reload");
-                CommandLog.Text += "\nReloading";
+                await HitKey("rightLight");
+                CommandLog.Text += "\nRight Light";
             });
 
             connection.On<IntentRequest>("ArmorIntent", async (intentReqest) =>
@@ -198,7 +198,6 @@ namespace DarkSoulsVoiceController.Client
         DataWriter DataWriterObject = null;
         private async Task HitKey(string command)
         {
-
             if (EventHandlerForDevice.Current.IsDeviceConnected)
             {
                 try
@@ -362,7 +361,7 @@ namespace DarkSoulsVoiceController.Client
                     // It is important that the FromIdAsync call is made on the UI thread because the consent prompt, when present,
                     // can only be displayed on the UI thread. Since this method is invoked by the UI, we are already in the UI thread.
                     Boolean openSuccess = await EventHandlerForDevice.Current.OpenDeviceAsync(entry.DeviceInformation, entry.DeviceSelector);
-
+                    
                     // Disable connect button if we connected to the device
                     UpdateConnectDisconnectButtonsAndList(!openSuccess);
                 }
