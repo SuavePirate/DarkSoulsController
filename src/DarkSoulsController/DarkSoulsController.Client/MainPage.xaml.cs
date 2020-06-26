@@ -75,95 +75,50 @@ namespace DarkSoulsVoiceController.Client
                 CommandLog.Text += "\nRight Light";
             });
 
-            connection.On<IntentRequest>("ArmorIntent", async (intentReqest) =>
+            connection.On<IntentRequest>("RightHeavyIntent", async (intentReqest) =>
             {
-                await HitKey("armor");
-                CommandLog.Text += "\nPutting on armor";
+                await HitKey("rightHeavy");
+                CommandLog.Text += "\nRight Heavy";
             });
-            connection.On<IntentRequest>("SprintIntent", async (intentReqest) =>
+
+            connection.On<IntentRequest>("LeftLightIntent", async (intentReqest) =>
             {
-                await HitKey("sprint");
-                CommandLog.Text += "\nSprinting";
+                await HitKey("leftLight");
+                CommandLog.Text += "\nLeft Light";
             });
-            connection.On<IntentRequest>("AttackIntent", async (intentReqest) =>
+
+            connection.On<IntentRequest>("LeftHeavyIntent", async (intentReqest) =>
             {
-                await HitKey("shoot");
-                //LeftClick();
-                CommandLog.Text += "\nAttack";
+                await HitKey("leftHeavy");
+                CommandLog.Text += "\nLeft Heavy";
             });
-            connection.On<IntentRequest>("AimIntent", async (intentReqest) =>
+
+            connection.On<IntentRequest>("RollIntent", async (intentReqest) =>
             {
-                await HitKey("aim");
-                //LeftClick();
-                CommandLog.Text += "\nAiming";
+                await HitKey("roll");
+                CommandLog.Text += "\nRolling";
             });
-            connection.On<IntentRequest>("PingIntent", async (intentReqest) =>
-            {
-                await HitKey("ping");
-                CommandLog.Text += "\nPinging";
-            });
-            connection.On<IntentRequest>("EnemyPingIntent", async (intentReqest) =>
-            {
-                await HitKey("ping");
-                await HitKey("ping");
-                CommandLog.Text += "\nPinging enemy";
-            });
-            connection.On<IntentRequest>("CutChuteIntent", async (intentReqest) =>
-            {
-                await HitKey("cut");
-                CommandLog.Text += "\nCutting chute";
-            });
-            connection.On<IntentRequest>("JumpIntent", async (intentReqest) =>
-            {
-                await HitKey("jump");
-                CommandLog.Text += "\nJumping";
-            });
-            connection.On<IntentRequest>("CrouchIntent", async (intentReqest) =>
-            {
-                await HitKey("crouch");
-                CommandLog.Text += "\nCrouching";
-            });
-            connection.On<IntentRequest>("ProneIntent", async (intentReqest) =>
-            {
-                //HitKey(VirtualKey.LeftControl);
-                await HitKey("prone");
-                CommandLog.Text += "\nGoing prone";
-            });
-            connection.On<IntentRequest>("JumpIntent", async (intentReqest) =>
-            {
-                await HitKey("jump");
-                CommandLog.Text += "\nJumping";
-            });
-            connection.On<IntentRequest>("GrenadeIntent", async (intentReqest) =>
-            {
-                await HitKey("grenade");
-                CommandLog.Text += "\nGrenade out!";
-            });
-            connection.On<IntentRequest>("GrenadeCommand", async (intentReqest) =>
-            {
-                await HitKey("grenade");
-                CommandLog.Text += "\nGrenade out!";
-            });
-            connection.On<IntentRequest>("AlternateGrenadeIntent", async (intentReqest) =>
-            {
-                await HitKey("altgrenade");
-                CommandLog.Text += "\nUsing alternate grenade";
-            });
-            connection.On<IntentRequest>("SwitchWeaponsIntent", async (intentReqest) =>
-            {
-                await HitKey("swap");
-                CommandLog.Text += "\nSwapping";
-            });
-            connection.On<IntentRequest>("MapIntent", async (intentReqest) =>
-            {
-                await HitKey("map");
-                CommandLog.Text += "\nToggling map";
-            });
-            connection.On<IntentRequest>("UseItemIntent", async (intentReqest) =>
+
+
+            connection.On<IntentRequest>("ItemIntent", async (intentReqest) =>
             {
                 await HitKey("item");
                 CommandLog.Text += "\nUsing item";
             });
+
+
+            connection.On<IntentRequest>("SwapRightWeaponIntent", async (intentReqest) =>
+            {
+                await HitKey("swapRight");
+                CommandLog.Text += "\nSwapping right";
+            });
+
+            connection.On<IntentRequest>("SwapLeftWeaponIntent", async (intentReqest) =>
+            {
+                await HitKey("swapLeft");
+                CommandLog.Text += "\nSwapping left";
+            });
+
             connection.On<IntentRequest>("MoveForwardIntent", async (intentReqest) =>
             {
                 var duration = intentReqest?.Intent?.Slots?.ContainsKey("Duration") == true ? intentReqest.Intent.Slots["Duration"].Value : null;

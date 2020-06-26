@@ -69,10 +69,6 @@ namespace WarzoneVoiceController.TwitchClient
                 var command = "FallbackIntent";
 
 
-                if (e.ChatMessage.Message.StartsWith("!reload"))
-                    command = "ReloadIntent";
-                if (e.ChatMessage.Message.StartsWith("!map"))
-                    command = "MapIntent";
                 if (e.ChatMessage.Message.StartsWith("!forward"))
                     command = "MoveForwardIntent";
                 if (e.ChatMessage.Message.StartsWith("!backwards"))
@@ -81,30 +77,25 @@ namespace WarzoneVoiceController.TwitchClient
                     command = "MoveLeftIntent";
                 if (e.ChatMessage.Message.StartsWith("!right"))
                     command = "MoveRightIntent";
-                if (e.ChatMessage.Message.StartsWith("!ping"))
-                    command = "PingIntent";
-                if (e.ChatMessage.Message.StartsWith("!sprint"))
-                    command = "SprintIntent";
-                if (e.ChatMessage.Message.StartsWith("!crouch"))
-                    command = "CrouchIntent";
                 if (e.ChatMessage.Message.StartsWith("!attack"))
                     command = "RightLightIntent";
-                if (e.ChatMessage.Message.StartsWith("!jump"))
-                    command = "JumpIntent";
-                if (e.ChatMessage.Message.StartsWith("!cut"))
-                    command = "CutChuteIntent";
-                if (e.ChatMessage.Message.StartsWith("!item"))
-                    command = "UseItemIntent";
-                if (e.ChatMessage.Message.StartsWith("!killstreak"))
-                    command = "KillstreakIntent";
-                if (e.ChatMessage.Message.StartsWith("!prone"))
-                    command = "ProneIntent";
-                if (e.ChatMessage.Message.StartsWith("!grenade"))
-                    command = "GrenadeIntent";
-                if (e.ChatMessage.Message.StartsWith("!altgrenade"))
-                    command = "AlternateGrenadeIntent";
-                if (e.ChatMessage.Message.StartsWith("!ads") || e.ChatMessage.Message.StartsWith("!aim"))
-                    command = "AimIntent";
+                if (e.ChatMessage.Message.StartsWith("!leftie") || e.ChatMessage.Message.StartsWith("lightning"))
+                    command = "LeftLightIntent";
+                if (e.ChatMessage.Message.StartsWith("!heavy"))
+                    command = "RightHeavyIntent";
+                if (e.ChatMessage.Message.StartsWith("!parry"))
+                    command = "LeftHeavyIntent";
+                if (e.ChatMessage.Message.StartsWith("!roll"))
+                    command = "RollIntent";
+                if (e.ChatMessage.Message.StartsWith("!item")
+                    || e.ChatMessage.Message.StartsWith("!grenade")
+                    || e.ChatMessage.Message.StartsWith("!heal")
+                    || e.ChatMessage.Message.StartsWith("!estus"))
+                    command = "ItemIntent";
+                if (e.ChatMessage.Message.StartsWith("!swap"))
+                    command = "SwapRightWeaponIntent";
+                if (e.ChatMessage.Message.StartsWith("!swapleft"))
+                    command = "SwapLeftWeaponIntent";
 
 
 

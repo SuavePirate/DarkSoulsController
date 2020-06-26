@@ -18,24 +18,16 @@ boolean           dbg = true;
 void setup() {
   Serial.begin(9600);
   serialCommand.addCommand("rightLight", RightLightAttack );
-  serialCommand.addCommand("armor", Armor );
-  serialCommand.addCommand("sprint", Sprint );
-  serialCommand.addCommand("ping", Ping );
-  serialCommand.addCommand("cut", CutChute );
-  serialCommand.addCommand("jump", Jump );
-  serialCommand.addCommand("crouch", Crouch );
-  serialCommand.addCommand("prone", Prone );
+  serialCommand.addCommand("rightHeavy", RightHeavyAttack );
+  serialCommand.addCommand("leftLight", LeftLightAttack );
+  serialCommand.addCommand("leftHeavy", LeftHeavyAttack);
+  serialCommand.addCommand("roll", Roll );
+  serialCommand.addCommand("item", Item );
+  serialCommand.addCommand("swapRight", SwapRight );
+  serialCommand.addCommand("swapLeft", SwapLeft);
   serialCommand.addCommand("forwards", Forward );
   serialCommand.addCommand("left", Left );
   serialCommand.addCommand("right", Right );
-  serialCommand.addCommand("map", Map );
-  serialCommand.addCommand("item", UseItem );
-  serialCommand.addCommand("swap", SwapWeapon );
-  serialCommand.addCommand("killstreak", Killstreak );
-  serialCommand.addCommand("shoot", Shoot );
-  serialCommand.addCommand("aim", Aim );
-  serialCommand.addCommand("grenade", Grenade );
-  serialCommand.addCommand("altgrenade", AlternateGrenade );
 
   serialCommand.addCommand("debug", SetDebug );
 }
@@ -50,46 +42,27 @@ void loop() {
 void RightLightAttack() {
   SendBasicKeyCommand('p');
 }
-void UseItem() {
-  SendBasicKeyCommand('f');
+void RightHeavyAttack() {
+  SendBasicKeyCommand('o');
 }
-void Shoot() {
-  SendBasicKeyCommand('9');
+void LeftLightAttack() {
+  SendBasicKeyCommand('l');
 }
-void Aim() {
-  SendBasicKeyCommand('0');
+void LeftHeavyAttack() {
+  SendBasicKeyCommand('k');
 }
-void Map() {
-  SendBasicKeyCommand('m');
-}
-void SwapWeapon() {
-  SendBasicKeyCommand('2');
-}
-
-void Killstreak() {
-  SendBasicKeyCommand('3');
-}
-
-void Sprint() {
-  SendBasicKeyCommand(KEY_LEFT_SHIFT);
-}
-void Ping() {
-  SendBasicKeyCommand(KEY_LEFT_ALT);
-}
-void CutChute() {
-  SendBasicKeyCommand('c');
-}
-void Jump() {
+void Roll() {
   SendBasicKeyCommand(' ');
 }
-void Grenade() {
-  SendBasicKeyCommand('g');
+void Item() {
+  SendBasicKeyCommand('r');
 }
-void AlternateGrenade() {
-  SendBasicKeyCommand('q');
+void SwapRight() {
+  SendBasicKeyCommand('4');
 }
-void Crouch() {
-  SendBasicKeyCommand(KEY_LEFT_CTRL);
+
+void SwapLeft() {
+  SendBasicKeyCommand('3');
 }
 void Prone() {
   Keyboard.begin();
