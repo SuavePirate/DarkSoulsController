@@ -1,0 +1,188 @@
+{
+  "domain": "DarkSouls",
+  "intents": [
+    {
+      "name": "AMAZON.YesIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "ItemIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "LeftHeavyIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "SnipeIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "RotateSpellIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "AMAZON.NoIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "LeftLightIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "KickIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "ParryRepostIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "LockIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "AMAZON.StopIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "JumpIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "SwapLeftWeaponIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "RightLightIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "MoveForwardIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "RunIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "RunJumpIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "SwapRightWeaponIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "AMAZON.RepeatIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "AMAZON.CancelIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "RotateItemIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "QuickQuitIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "AMAZON.FallbackIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "BlockIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "RollIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "AMAZON.StartOverIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "AMAZON.HelpIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "InteractIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "GestureIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    },
+    {
+      "name": "RightHeavyIntent",
+      "description": "",
+      "implicit_slots": [],
+      "slots": []
+    }
+  ],
+  "tags": [
+    "o"
+  ]
+}

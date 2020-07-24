@@ -28,7 +28,22 @@ void setup() {
   serialCommand.addCommand("forwards", Forward );
   serialCommand.addCommand("left", Left );
   serialCommand.addCommand("right", Right );
+  serialCommand.addCommand("backwards", Backwards );
+  serialCommand.addCommand("quit", QuickQuit);
 
+  serialCommand.addCommand("rotateItem", RotateItem);
+  serialCommand.addCommand("rotateSpell", RotateSpell);
+  serialCommand.addCommand("block", Block);
+  serialCommand.addCommand("run", Run);
+  serialCommand.addCommand("jump", Jump);
+  serialCommand.addCommand("runJump", RunJump);
+  serialCommand.addCommand("snipe", Snipe);
+  serialCommand.addCommand("gitgud", GitGud);
+  serialCommand.addCommand("interact", Interact);
+  serialCommand.addCommand("kick", Kick);
+  serialCommand.addCommand("lock", Lock);
+
+  
   serialCommand.addCommand("debug", SetDebug );
 }
 
@@ -39,6 +54,46 @@ void loop() {
   serialCommand.readSerial();
 }
 
+void Snipe() {
+  
+}
+void Kick() {
+   Keyboard.begin();
+  
+  
+  Keyboard.press('w');
+  Keyboard.press('p');
+  delay(50);
+  Keyboard.releaseAll();
+  delay(50);
+
+  Keyboard.end();
+}
+void GitGud() {
+  LeftHeavyAttack();
+  delay(3000);
+  RightLightAttack();
+}
+
+void RotateItem() {
+  SendBasicKeyCommand(KEY_DOWN_ARROW);
+}
+
+void RotateSpell() {
+  SendBasicKeyCommand(KEY_UP_ARROW);
+}
+void Lock() {
+  SendBasicKeyCommand('q');
+}
+
+
+void Interact() {
+  SendBasicKeyCommand('e');
+}
+
+void Jump() {
+  SendBasicKeyCommand(' ');
+}
 void RightLightAttack() {
   SendBasicKeyCommand('p');
 }
@@ -71,8 +126,66 @@ void Prone() {
   Keyboard.releaseAll();
   Keyboard.end();
 }
+void QuickQuit() {
+  Keyboard.begin();
+  
+  Keyboard.press(KEY_ESC);
+  delay(50);
+  Keyboard.releaseAll();
+  delay(50);
+  
+  Keyboard.press(KEY_LEFT_ARROW);
+  delay(50);
+  Keyboard.releaseAll();
+  delay(50);
+  
+  Keyboard.press('e');
+  delay(50);
+  Keyboard.releaseAll();
+  delay(50);
+
+  
+  Keyboard.press(KEY_LEFT_SHIFT);
+  Keyboard.press(KEY_LEFT_ARROW);
+  delay(50);
+  Keyboard.releaseAll();
+  delay(50);
+  
+  Keyboard.press('e');
+  delay(50);
+  Keyboard.releaseAll();
+  delay(50);
+
+  Keyboard.press(KEY_LEFT_ARROW);
+  delay(50);
+  Keyboard.releaseAll();
+  delay(50);
+
+  Keyboard.press('e');
+  delay(100);
+  Keyboard.releaseAll();
+  delay(50);
+  
+
+  Keyboard.press('e');
+  delay(100);
+  Keyboard.releaseAll();
+  delay(50);
+  
+  Keyboard.end();
+}
 void Armor() {
   SendBasicKeyCommand('4');
+}
+void Block() {
+
+  char *arg = serialCommand.next();
+
+  Keyboard.begin();
+  Keyboard.press('l');
+  delay(2500);  
+  Keyboard.releaseAll();
+  Keyboard.end();
 }
 void Left() {
 
@@ -101,6 +214,30 @@ void Right() {
   } else {
     delay(2500);    
   }
+  Keyboard.releaseAll();
+  Keyboard.end();
+}
+void Run() {
+
+  char *arg = serialCommand.next();
+
+  Keyboard.begin();
+  Keyboard.press(' ');
+    delay(2500);    
+  Keyboard.releaseAll();
+  Keyboard.end();
+}
+void RunJump() {
+
+  char *arg = serialCommand.next();
+
+  Keyboard.begin();
+  Keyboard.press(' ');
+  delay(1000);  
+  Keyboard.releaseAll();
+  delay(10);  
+  Keyboard.press(' ');
+  delay(10);  
   Keyboard.releaseAll();
   Keyboard.end();
 }
@@ -136,6 +273,7 @@ void Backwards() {
 }
 void SendBasicKeyCommand(char key) {
   Keyboard.begin();
+  Keyboard.releaseAll();
   Keyboard.press(key);
   delay(10);   
   Keyboard.releaseAll();

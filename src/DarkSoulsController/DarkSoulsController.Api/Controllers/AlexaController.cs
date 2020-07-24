@@ -52,7 +52,7 @@ namespace DarkSoulsController.Api.Controllers
                     case "LeftHeavyIntent":
                         return Ok(ResponseBuilder.Tell("Left Heavy attack"));
                     case "RollIntent":
-                        return Ok(ResponseBuilder.Tell("Rolling!"));
+                        return Ok(ResponseBuilder.Ask("Rolling!", null));
                     case "ItemIntent":
                         return Ok(ResponseBuilder.Tell("Using item. Hopefully it isn't estus"));
                     case "SwapLeftWeaponIntent":
@@ -64,11 +64,14 @@ namespace DarkSoulsController.Api.Controllers
                     case "MoveLeftIntent":
                     case "MoveRightIntent":
                         return Ok(ResponseBuilder.Tell("Moving!"));
+                    case "QuickQuitIntent": return Ok(ResponseBuilder.Tell("Abort!"));
 
 
                     case "AMAZON.HelpIntent": return Ok(ResponseBuilder.Ask("Happy to help! You can issue commands such as 'jump', 'reload', 'put on shields' and more! Try saying one of those.", null));
                     case "AMAZON.StopIntent":
                     case "AMAZON.CancelIntent": return Ok(ResponseBuilder.Tell("Thanks for using the DarkSouls Controller. Come back later."));
+
+                    default: return Ok(ResponseBuilder.Tell("Executing command"));
                 }
             }
 

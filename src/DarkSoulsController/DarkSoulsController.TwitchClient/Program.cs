@@ -69,35 +69,57 @@ namespace WarzoneVoiceController.TwitchClient
                 var command = "FallbackIntent";
 
 
-                if (e.ChatMessage.Message.StartsWith("!forward"))
+                if (e.ChatMessage.Message.ToLower().StartsWith("!forward"))
                     command = "MoveForwardIntent";
-                if (e.ChatMessage.Message.StartsWith("!backwards"))
+                if (e.ChatMessage.Message.ToLower().StartsWith("!backwards"))
                     command = "MoveBackwardsIntent";
-                if (e.ChatMessage.Message.StartsWith("!left"))
+                if (e.ChatMessage.Message.ToLower().StartsWith("!left"))
                     command = "MoveLeftIntent";
-                if (e.ChatMessage.Message.StartsWith("!right"))
+                if (e.ChatMessage.Message.ToLower().StartsWith("!right"))
                     command = "MoveRightIntent";
-                if (e.ChatMessage.Message.StartsWith("!attack"))
+                if (e.ChatMessage.Message.ToLower().StartsWith("!attack"))
                     command = "RightLightIntent";
-                if (e.ChatMessage.Message.StartsWith("!leftie") || e.ChatMessage.Message.StartsWith("lightning"))
+                if (e.ChatMessage.Message.ToLower().StartsWith("!leftie") || e.ChatMessage.Message.ToLower().StartsWith("lightning"))
                     command = "LeftLightIntent";
-                if (e.ChatMessage.Message.StartsWith("!heavy"))
+                if (e.ChatMessage.Message.ToLower().StartsWith("!heavy"))
                     command = "RightHeavyIntent";
-                if (e.ChatMessage.Message.StartsWith("!parry"))
+                if (e.ChatMessage.Message.ToLower().StartsWith("!parry"))
                     command = "LeftHeavyIntent";
-                if (e.ChatMessage.Message.StartsWith("!roll"))
+                if (e.ChatMessage.Message.ToLower().StartsWith("!roll"))
                     command = "RollIntent";
-                if (e.ChatMessage.Message.StartsWith("!item")
-                    || e.ChatMessage.Message.StartsWith("!grenade")
-                    || e.ChatMessage.Message.StartsWith("!heal")
-                    || e.ChatMessage.Message.StartsWith("!estus"))
+                if (e.ChatMessage.Message.ToLower().StartsWith("!item")
+                    || e.ChatMessage.Message.ToLower().StartsWith("!grenade")
+                    || e.ChatMessage.Message.ToLower().StartsWith("!heal")
+                    || e.ChatMessage.Message.ToLower().StartsWith("!estus")
+                    || e.ChatMessage.Message.ToLower().StartsWith("!yeet"))
                     command = "ItemIntent";
-                if (e.ChatMessage.Message.StartsWith("!swap"))
+                if (e.ChatMessage.Message.ToLower().StartsWith("!swap"))
                     command = "SwapRightWeaponIntent";
-                if (e.ChatMessage.Message.StartsWith("!swapleft"))
+                if (e.ChatMessage.Message.ToLower().StartsWith("!swapleft"))
                     command = "SwapLeftWeaponIntent";
 
-
+                if (e.ChatMessage.Message.ToLower().StartsWith("!rotateitem"))
+                    command = "RotateItemIntent";
+                if (e.ChatMessage.Message.ToLower().StartsWith("!rotatespell"))
+                    command = "RotateSpellIntent"; 
+                if (e.ChatMessage.Message.ToLower().StartsWith("!block"))
+                    command = "BlockIntent"; 
+                if (e.ChatMessage.Message.ToLower().StartsWith("!run"))
+                    command = "RunIntent"; 
+                if (e.ChatMessage.Message.ToLower().StartsWith("!jump"))
+                    command = "JumpIntent"; 
+                if (e.ChatMessage.Message.ToLower().StartsWith("!runjump"))
+                    command = "RunJumpIntent"; 
+                if (e.ChatMessage.Message.ToLower().StartsWith("!snipe"))
+                    command = "SnipeIntent"; 
+                if (e.ChatMessage.Message.ToLower().StartsWith("!gitgud"))
+                    command = "ParryRepostIntent"; 
+                if (e.ChatMessage.Message.ToLower().StartsWith("!interact"))
+                    command = "InteractIntent"; 
+                if (e.ChatMessage.Message.ToLower().StartsWith("!kick"))
+                    command = "KickIntent"; 
+                if (e.ChatMessage.Message.ToLower().StartsWith("!lock"))
+                    command = "LockIntent";
 
                 var response = await client.PostAsync($"https://darksouls.azurewebsites.net/api/command/{command}", null);
                 Console.WriteLine(response);

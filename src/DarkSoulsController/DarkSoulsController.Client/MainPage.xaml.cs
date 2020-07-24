@@ -99,6 +99,11 @@ namespace DarkSoulsVoiceController.Client
                 CommandLog.Text += "\nRolling";
             });
 
+            connection.On<IntentRequest>("QuickQuitIntent", async (intentReqest) =>
+            {
+                await HitKey("quit");
+                CommandLog.Text += "\nBye Felicia";
+            });
 
             connection.On<IntentRequest>("ItemIntent", async (intentReqest) =>
             {
@@ -147,6 +152,70 @@ namespace DarkSoulsVoiceController.Client
                 await HitKey($"right");
                 CommandLog.Text += "\nMoving right";
             });
+
+
+
+            connection.On<IntentRequest>("LockIntent", async (intentReqest) =>
+            {
+                await HitKey($"lock");
+                CommandLog.Text += "\nToggling lock";
+            });
+            connection.On<IntentRequest>("RotateItemIntent", async (intentReqest) =>
+            {
+                await HitKey($"rotateItem");
+                CommandLog.Text += "\nRotating item";
+            });
+            connection.On<IntentRequest>("RotateSpellIntent", async (intentReqest) =>
+            {
+                await HitKey($"rotateSpell");
+                CommandLog.Text += "\nRotating spell";
+            });
+            connection.On<IntentRequest>("BlockIntent", async (intentReqest) =>
+            {
+                await HitKey($"block");
+                CommandLog.Text += "\nBlocking";
+            });
+            connection.On<IntentRequest>("RunIntent", async (intentReqest) =>
+            {
+                await HitKey($"run");
+                CommandLog.Text += "\nRunning";
+            });
+            connection.On<IntentRequest>("JumpIntent", async (intentReqest) =>
+            {
+                await HitKey($"jump");
+                CommandLog.Text += "\nJumping";
+            });
+            connection.On<IntentRequest>("RunJumpIntent", async (intentReqest) =>
+            {
+                await HitKey($"runJump");
+                CommandLog.Text += "\nSending it";
+            });
+            connection.On<IntentRequest>("SnipeIntent", async (intentReqest) =>
+            {
+                await HitKey($"snipe");
+                CommandLog.Text += "\nSnipping";
+            });
+            connection.On<IntentRequest>("ParryRepostIntent", async (intentReqest) =>
+            {
+                await HitKey($"gitgud");
+                CommandLog.Text += "\nGitting Gud";
+            });
+            connection.On<IntentRequest>("InteractIntent", async (intentReqest) =>
+            {
+                await HitKey($"interact");
+                CommandLog.Text += "\nInteracting";
+            });
+
+            connection.On<IntentRequest>("KickIntent", async (intentReqest) =>
+            {
+                await HitKey($"kick");
+                CommandLog.Text += "\nKicking";
+            });
+
+
+
+
+
             await connection.StartAsync();
         }
 
